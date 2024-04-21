@@ -82,7 +82,7 @@ const config: HardhatUserConfig = {
     ...(process.env.KEY_TESTNET && { bscTestnet }),
     ...(process.env.KEY_MAINNET && { bscMainnet }),
     ...(process.env.KEY_GOERLI && { goerli }),
-    ...(process.env.KEY_PULSE_TESTNET && {pulseTestnet}),
+    ...(process.env.KEY_PULSE_TESTNET && { pulseTestnet }),
     ...(process.env.KEY_TESTNET && { sepolia }),
     ...(process.env.KEY_TESTNET && { holesky }),
     // goerli: goerli,
@@ -92,44 +92,52 @@ const config: HardhatUserConfig = {
     apiKey: {
       bsctestnet: process.env.BSCSCAN_API_KEY,
       bsc: process.env.BSCSCAN_API_KEY,
-      pulseTestnet: "0000000000000000000000000000000000",
+      pulseTestnet: '0000000000000000000000000000000000',
       mumbai: process.env.MUMBAI_API_KEY,
-      holesky: process.env.ETHERSCAN_API_KEY
+      holesky: process.env.ETHERSCAN_API_KEY,
     },
     customChains: [
       {
-        network: "bsctestnet",
+        network: 'bsctestnet',
         chainId: 97,
         urls: {
-          apiURL: "https://api-testnet.bscscan.com/api",
-          browserURL: "https://testnet.bscscan.com"
-        }
+          apiURL: 'https://api-testnet.bscscan.com/api',
+          browserURL: 'https://testnet.bscscan.com',
+        },
       },
       {
-        network: "bsc",
+        network: 'bsc',
         chainId: 56,
         urls: {
-          apiURL: "https://api.bscscan.com/api",
-          browserURL: "https://bscscan.com"
-        }
+          apiURL: 'https://api.bscscan.com/api',
+          browserURL: 'https://bscscan.com',
+        },
       },
       {
-        network: "pulseTestnet",
+        network: 'pulseTestnet',
         chainId: 943,
         urls: {
-          apiURL: "https://api.scan.pulsechain.com/api",
-          browserURL: "https://rpc.v4.testnet.pulsechain.com"
-        }
+          apiURL: 'https://api.scan.pulsechain.com/api',
+          browserURL: 'https://rpc.v4.testnet.pulsechain.com',
+        },
       },
       {
-        network: "mumbai",
+        network: 'mumbai',
         chainId: 80001,
         urls: {
-          apiURL: "https://api-testnet.polygonscan.com/api",
-          browserURL: "https://mumbai.polygonscan.com/"
-        }
+          apiURL: 'https://api-testnet.polygonscan.com/api',
+          browserURL: 'https://mumbai.polygonscan.com/',
+        },
       },
-    ]
+      {
+        network: 'holesky',
+        chainId: 17000,
+        urls: {
+          apiURL: 'https://api-holesky.etherscan.io/api',
+          browserURL: 'https://holesky.etherscan.io',
+        },
+      },
+    ],
   },
   solidity: {
     compilers: [
