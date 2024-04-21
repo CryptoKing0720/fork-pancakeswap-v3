@@ -46,7 +46,7 @@ const holesky: NetworkUserConfig = {
 }
 
 const config = {
-  defaultNetwork: "hardhat",
+  defaultNetwork: "holesky",
   networks: {
     hardhat: {},
     ...({ sepolia }),
@@ -95,6 +95,14 @@ const config = {
           apiURL: "https://api-testnet.polygonscan.com/api",
           browserURL: "https://mumbai.polygonscan.com/"
         }
+      },
+      {
+        network: "holesky",
+        chainId: 17000,
+        urls: {
+          apiURL: "https://api-holesky.etherscan.io/api",
+          browserURL: "https://holesky.etherscan.io",
+        },
       },
     ]
   },

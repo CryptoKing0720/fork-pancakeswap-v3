@@ -20,7 +20,7 @@ export default {
     testnet: "0xcf10c31B54386bB2d203C568D345D949109E99A9",
     sepolia: "0xcf10c31B54386bB2d203C568D345D949109E99A9",
     goerli: "0xb224D46DD1e418588C8266F005E4bf9ff5f6b55c",
-    holesky: "0x41adc52ad43E4B05D442EC5A8240991958a003e2",
+    holesky: "0x41Cf8b4742e92904ADA85aa6818053B937c30eeD",
   },
   SwapTwoPoolDeployer: {
     mainnet: "0xdDFCDAacC836dd5A1AE2D375fFb153cE59DD09ff",
@@ -28,7 +28,7 @@ export default {
     testnet: "0x61E860130f66a479a9C1B337E6f0a3ECeC2ef1f2",
     sepolia: "0x26eFDd7f16196fe9923970B7BB1A92E51e81d06B",
     goerli: "0x2E564618dC39D2be3115dcF68b75e42bD8432087",
-    holesky: "0x1dF6Ece641ae890a250E271063e4E1Ff0fA08dCc",
+    holesky: "0x4b0d72C41149ff12B1f7cBd570fcD5F1B7cBB956",
   },
   SwapThreePoolDeployer: {
     mainnet: "0x6AF7a605953C0B462EE9540217F5bD80878c6b2E",
@@ -36,7 +36,7 @@ export default {
     testnet: "0x19222BD13D6a3DBD56b0c8381A04a10cA9e461DF",
     sepolia: "0x143E744bdF83A587A214F15AaE4C8ADB616Fde8e",
     goerli: "0x534F89508FAc4b486c090e407bE204D6AC0462C0",
-    holesky: "0xde8EE3bEDbf78894b7A79fb910c2a4Da78f85000",
+    holesky: "0x0c113a15027f560A4784F34D2815056861B81dd0",
   },
   Factory: {
     mainnet: "0x25a55f9f2279A54951133D503490342b50E5cd15",

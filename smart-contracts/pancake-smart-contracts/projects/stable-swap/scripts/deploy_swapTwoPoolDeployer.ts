@@ -1,19 +1,19 @@
 import { ethers, run, network } from "hardhat";
-import { sleep } from "sleep-ts"
+import { sleep } from "sleep-ts";
 import { ContractJson } from "./deploy";
 
-const artifacts: {[name:string]: ContractJson} = {
-  PancakeStableSwapTwoPoolDeployer: require('../artifacts/contracts/PancakeStableSwapTwoPoolDeployer.sol/PancakeStableSwapTwoPoolDeployer.json')
-}
+const artifacts: { [name: string]: ContractJson } = {
+  PancakeStableSwapTwoPoolDeployer: require("../artifacts/contracts/PancakeStableSwapTwoPoolDeployer.sol/PancakeStableSwapTwoPoolDeployer.json"),
+};
 
-const verify = async (address:string, parameter:any[] = []) => {
-  console.log(`Veryfing ${address} ...`)
-  await run('verify:verify', {
+const verify = async (address: string, parameter: any[] = []) => {
+  console.log(`Veryfing ${address} ...`);
+  await run("verify:verify", {
     address: address,
-    constructorArguments: parameter
-  })
-  console.log("Success!")
-}
+    constructorArguments: parameter,
+  });
+  console.log("Success!");
+};
 
 async function main() {
   // Get network data from Hardhat config (see hardhat.config.ts).
@@ -24,27 +24,25 @@ async function main() {
   // Compile contracts.
   await run("compile");
   console.log("Compiled contracts...");
-  const [owner] = await ethers.getSigners()
-  let pancakeStableSwapTwoPoolDeployer_address = ''
-  let PancakeStableSwapTwoPoolDeployer
+  const [owner] = await ethers.getSigners();
+  let pancakeStableSwapTwoPoolDeployer_address = "";
+  let PancakeStableSwapTwoPoolDeployer;
   if (!pancakeStableSwapTwoPoolDeployer_address) {
     PancakeStableSwapTwoPoolDeployer = await ethers.getContractFactory("PancakeStableSwapTwoPoolDeployer");
     const pancakeStableSwapTwoPoolDeployer = await PancakeStableSwapTwoPoolDeployer.deploy();
     await pancakeStableSwapTwoPoolDeployer.deployed();
-    pancakeStableSwapTwoPoolDeployer_address = pancakeStableSwapTwoPoolDeployer.address
+    pancakeStableSwapTwoPoolDeployer_address = pancakeStableSwapTwoPoolDeployer.address;
   } else {
     PancakeStableSwapTwoPoolDeployer = new ethers.Contract(
-      pancakeStableSwapTwoPoolDeployer_address, 
+      pancakeStableSwapTwoPoolDeployer_address,
       artifacts.PancakeStableSwapTwoPoolDeployer.abi,
       owner
-    )
+    );
   }
 
   console.log("pancakeStableSwapTwoPoolDeployer deployed to:", pancakeStableSwapTwoPoolDeployer_address);
-  await sleep(10000)
-  await verify(
-    pancakeStableSwapTwoPoolDeployer_address,
-  )
+  await sleep(10000);
+  await verify("0x4b0d72C41149ff12B1f7cBd570fcD5F1B7cBB956");
 }
 
 main()

@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "@openzeppelin-4.5.0/contracts": "npm:@openzeppelin/contracts@4.5.0",
+        "hardhat": "^2.22.3",
         "husky": "^9.0.11"
     }
 }
