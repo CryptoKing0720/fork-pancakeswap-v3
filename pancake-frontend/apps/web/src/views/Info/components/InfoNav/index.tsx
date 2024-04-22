@@ -24,7 +24,8 @@ import { useChainIdByQuery, useChainNameByQuery, useMultiChainPath } from 'state
 import { styled } from 'styled-components'
 import { chains } from 'utils/wagmi'
 import Search from 'views/Info/components/InfoSearch'
-import { arbitrum, base, bsc, linea, mainnet, opBNB, polygonZkEvm, pulsechainV4, zkSync, holesky } from 'wagmi/chains'
+import { arbitrum, base, bsc, linea, mainnet, opBNB, polygonZkEvm, pulsechainV4, zkSync } from 'wagmi/chains'
+import { holesky } from 'holesky'
 
 const NavWrapper = styled(Flex)`
   background: ${({ theme }) => theme.colors.gradientCardHeader};

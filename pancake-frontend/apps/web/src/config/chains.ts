@@ -23,8 +23,8 @@ import {
   sepolia,
   zkSync,
   zkSyncTestnet,
-  holesky,
 } from 'wagmi/chains'
+import { holesky } from 'holesky'
 
 export const CHAIN_QUERY_NAME = chainNames
 

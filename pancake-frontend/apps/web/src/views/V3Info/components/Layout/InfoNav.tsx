@@ -20,7 +20,8 @@ import { multiChainId, multiChainPaths, multiChainShortName } from 'state/info/c
 import { useChainNameByQuery, useMultiChainPath } from 'state/info/hooks'
 import { styled } from 'styled-components'
 import { chains } from 'utils/wagmi'
-import { arbitrum, base, bsc, linea, mainnet, opBNB, polygonZkEvm, pulsechainV4, zkSync, holesky } from 'wagmi/chains'
+import { arbitrum, base, bsc, linea, mainnet, opBNB, polygonZkEvm, pulsechainV4, zkSync } from 'wagmi/chains'
+import { holesky } from 'holesky'
 import { v3InfoPath } from '../../constants'
 import Search from '../Search'
 

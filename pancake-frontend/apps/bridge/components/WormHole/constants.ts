@@ -1,14 +1,5 @@
 import { MainnetChainName, TestnetChainName } from '@wormhole-foundation/wormhole-connect'
-import {
-  arbitrum,
-  arbitrumGoerli,
-  base,
-  baseGoerli,
-  bscTestnet,
-  mainnet as ethereum,
-  goerli,
-  holesky,
-} from 'wagmi/chains'
+import { arbitrum, arbitrumGoerli, base, baseGoerli, bscTestnet, mainnet as ethereum, goerli } from 'wagmi/chains'
 import { getNodeRealUrl } from '../../utils/nodes/nodereal'
 import { getGroveUrl } from '../../utils/nodes/pokt'
 import { WormholeChainIds } from './chains'

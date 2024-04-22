@@ -18,8 +18,9 @@ import {
   sepolia,
   zkSync,
   zkSyncTestnet,
-  holesky,
 } from 'wagmi/chains'
+
+import { holesky } from 'holesky'
 
 const ARBITRUM_NODES = [
   ...arbitrum.rpcUrls.public.http,
