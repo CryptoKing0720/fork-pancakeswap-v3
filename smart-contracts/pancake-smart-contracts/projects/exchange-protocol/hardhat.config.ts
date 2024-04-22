@@ -6,8 +6,8 @@ import "hardhat-abi-exporter";
 import "hardhat-contract-sizer";
 import "solidity-coverage";
 import "dotenv/config";
-import '@nomicfoundation/hardhat-verify'
-require('dotenv').config({ path: require('find-config')('.env') })
+import "@nomicfoundation/hardhat-verify";
+require("dotenv").config({ path: require("find-config")(".env") });
 
 const bscTestnet: NetworkUserConfig = {
   url: "https://data-seed-prebsc-1-s1.binance.org:8545/",
@@ -22,35 +22,35 @@ const bscMainnet: NetworkUserConfig = {
 };
 
 const pulseTestnet: NetworkUserConfig = {
-  url: 'https://rpc.v4.testnet.pulsechain.com',
+  url: "https://rpc.v4.testnet.pulsechain.com",
   chainId: 943,
   accounts: [process.env.KEY_TESTNET!],
-}
+};
 
 const sepolia: NetworkUserConfig = {
-  url: 'https://eth-sepolia.public.blastapi.io',
+  url: "https://eth-sepolia.public.blastapi.io",
   chainId: 11155111,
   accounts: [process.env.KEY_TESTNET!],
-}
+};
 
 const mumbai: NetworkUserConfig = {
-  url: 'https://polygon-mumbai-bor-rpc.publicnode.com',
+  url: "https://polygon-mumbai-bor-rpc.publicnode.com",
   chainId: 80001,
   accounts: [process.env.KEY_TESTNET!],
-}
+};
 
 const holesky: NetworkUserConfig = {
-  url: 'https://ethereum-holesky-rpc.publicnode.com',
+  url: "https://ethereum-holesky-rpc.publicnode.com",
   chainId: 17000,
   accounts: [process.env.KEY_TESTNET!],
-}
+};
 
 const config = {
   defaultNetwork: "holesky",
   networks: {
     hardhat: {},
-    ...({ sepolia }),
-    ...({ holesky }),
+    ...{ sepolia },
+    ...{ holesky },
     // mainnet: bscMainnet,
   },
 
@@ -61,7 +61,7 @@ const config = {
       bsc: "HDCD9C44C7YRZGHE48WGHGUZW5DU1R2WKT",
       pulseTestnet: "0000000000000000000000000000000000",
       mumbai: "KMUEE12BAEC489N8J76FKZYA7ZKNRQMVZ4",
-      holesky: "2VPQC6NNB1AEJI2P3GQA73C9UZ823EFY3F"
+      holesky: "2VPQC6NNB1AEJI2P3GQA73C9UZ823EFY3F",
     },
     customChains: [
       {
@@ -69,32 +69,32 @@ const config = {
         chainId: 97,
         urls: {
           apiURL: "https://api-testnet.bscscan.com/api",
-          browserURL: "https://testnet.bscscan.com"
-        }
+          browserURL: "https://testnet.bscscan.com",
+        },
       },
       {
         network: "bsc",
         chainId: 56,
         urls: {
           apiURL: "https://api.bscscan.com/api",
-          browserURL: "https://bscscan.com"
-        }
+          browserURL: "https://bscscan.com",
+        },
       },
       {
         network: "pulseTestnet",
         chainId: 943,
         urls: {
           apiURL: "https://api.scan.pulsechain.com/api",
-          browserURL: "https://rpc.v4.testnet.pulsechain.com"
-        }
+          browserURL: "https://rpc.v4.testnet.pulsechain.com",
+        },
       },
       {
         network: "mumbai",
         chainId: 80001,
         urls: {
           apiURL: "https://api-testnet.polygonscan.com/api",
-          browserURL: "https://mumbai.polygonscan.com/"
-        }
+          browserURL: "https://mumbai.polygonscan.com/",
+        },
       },
       {
         network: "holesky",
@@ -104,12 +104,12 @@ const config = {
           browserURL: "https://holesky.etherscan.io",
         },
       },
-    ]
+    ],
   },
   sourcify: {
     // Disabled by default
     // Doesn't need an API key
-    enabled: true
+    enabled: true,
   },
   solidity: {
     compilers: [
