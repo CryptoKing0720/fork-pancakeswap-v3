@@ -32,6 +32,7 @@ export const FACTORY_ADDRESS_MAP = {
   [ChainId.ARBITRUM_SEPOLIA]: '0x02a84c1b3BBD7401a5f7fa98a384EBC70bB5749E',
   [ChainId.BASE_SEPOLIA]: '0x02a84c1b3BBD7401a5f7fa98a384EBC70bB5749E',
   [ChainId.PULSE_TESTNET]: '0x41adc52ad43E4B05D442EC5A8240991958a003e2',
+  [ChainId.HOLESKY]: '0x60EC04837115BF3991A9852DC99d37dE9D5284bA',
 } as const satisfies Record<ChainId, Address>
 
 export const INIT_CODE_HASH = '0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5'
@@ -59,6 +60,7 @@ export const INIT_CODE_HASH_MAP = {
   [ChainId.ARBITRUM_SEPOLIA]: INIT_CODE_HASH_ETH,
   [ChainId.BASE_SEPOLIA]: INIT_CODE_HASH_ETH,
   [ChainId.PULSE_TESTNET]: INIT_CODE_HASH_ETH,
+  [ChainId.HOLESKY]: INIT_CODE_HASH_ETH,
 } as const satisfies Record<ChainId, Hash>
 
 export const WETH9 = {
@@ -230,6 +232,14 @@ export const WETH9 = {
     'Wrapped Ether',
     'https://weth.io'
   ),
+  [ChainId.HOLESKY]: new ERC20Token(
+    ChainId.HOLESKY,
+    '0x6B5817E7091BC0C747741E96820b0199388245EA',
+    18,
+    'WETH',
+    'Wrapped Ether',
+    'https://weth.io'
+  ),
 }
 
 export const WBNB = {
@@ -297,6 +307,7 @@ export const WNATIVE = {
   [ChainId.ARBITRUM_SEPOLIA]: WETH9[ChainId.ARBITRUM_SEPOLIA],
   [ChainId.BASE_SEPOLIA]: WETH9[ChainId.BASE_SEPOLIA],
   [ChainId.PULSE_TESTNET]: WETH9[ChainId.PULSE_TESTNET],
+  [ChainId.HOLESKY]: WETH9[ChainId.HOLESKY],
 } satisfies Record<ChainId, ERC20Token>
 
 const ETHER = { name: 'Ether', symbol: 'ETH', decimals: 18 } as const
@@ -354,6 +365,11 @@ export const NATIVE = {
   [ChainId.PULSE_TESTNET]: {
     name: 'Pulse Ether',
     symbol: 'TPLS',
+    decimals: 18,
+  },
+  [ChainId.HOLESKY]: {
+    name: 'Holesky Ether',
+    symbol: 'ETH',
     decimals: 18,
   },
 } satisfies Record<

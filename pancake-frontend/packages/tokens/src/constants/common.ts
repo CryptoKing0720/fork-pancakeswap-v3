@@ -309,6 +309,13 @@ export const USDC = {
     'USDC',
     'USD Coin',
   ),
+  [ChainId.HOLESKY]: new ERC20Token(
+    ChainId.HOLESKY,
+    '0x74A4A85C611679B73F402B36c0F84A7D2CcdFDa3',
+    6,
+    'USDC',
+    'USD Coin',
+  ),
   [ChainId.SEPOLIA]: new ERC20Token(
     ChainId.SEPOLIA,
     '0x6f14C02Fc1F78322cFd7d707aB90f18baD3B54f5',
@@ -377,6 +384,13 @@ export const USDT = {
     'USDT',
     'Tether USD',
   ),
+  [ChainId.HOLESKY]: new ERC20Token(
+    ChainId.HOLESKY,
+    '0x87350147a24099Bf1e7E677576f01C1415857C75',
+    6,
+    'USDT',
+    'Tether USD',
+  ),
   [ChainId.OPBNB]: new ERC20Token(
     ChainId.OPBNB,
     '0x9e5AAC1Ba1a2e6aEd6b32689DFcF62A509Ca96f3',
@@ -417,4 +431,5 @@ export const STABLE_COIN = {
   [ChainId.ARBITRUM_SEPOLIA]: USDC[ChainId.ARBITRUM_SEPOLIA],
   [ChainId.BASE_SEPOLIA]: USDC[ChainId.BASE_SEPOLIA],
   [ChainId.PULSE_TESTNET]: USDC[ChainId.PULSE_TESTNET],
+  [ChainId.HOLESKY]: USDC[ChainId.HOLESKY],
 } satisfies Record<ChainId, ERC20Token>

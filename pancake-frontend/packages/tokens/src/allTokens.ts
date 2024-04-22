@@ -17,6 +17,7 @@ import { opBnbTestnetTokens } from './constants/opBnbTestnet'
 import { polygonZkEvmTokens } from './constants/polygonZkEVM'
 import { polygonZkEvmTestnetTokens } from './constants/polygonZkEVMTestnet'
 import { scrollSepoliaTokens } from './constants/scrollSepolia'
+import { holeskyTokens } from './constants/holesky'
 import { sepoliaTokens } from './constants/sepolia'
 import { zksyncTokens } from './constants/zkSync'
 import { zkSyncTestnetTokens } from './constants/zkSyncTestnet'
@@ -44,4 +45,5 @@ export const allTokens = {
   [ChainId.ARBITRUM_SEPOLIA]: arbSepoliaTokens,
   [ChainId.BASE_SEPOLIA]: baseSepoliaTokens,
   [ChainId.PULSE_TESTNET]: pulseTestnetTokens,
+  [ChainId.HOLESKY]: holeskyTokens,
 }

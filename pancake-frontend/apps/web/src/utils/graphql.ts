@@ -49,6 +49,7 @@ export const v3Clients = {
   [ChainId.SCROLL_SEPOLIA]: new GraphQLClient(V3_SUBGRAPH_URLS[ChainId.SCROLL_SEPOLIA]),
   [ChainId.OPBNB]: new GraphQLClient(V3_SUBGRAPH_URLS[ChainId.OPBNB]),
   [ChainId.PULSE_TESTNET]: new GraphQLClient(V3_SUBGRAPH_URLS[ChainId.PULSE_TESTNET]),
+  [ChainId.HOLESKY]: new GraphQLClient(V3_SUBGRAPH_URLS[ChainId.HOLESKY]),
 }
 
 export const v3InfoClients = { ...v3Clients, [ChainId.BSC]: new GraphQLClient(V3_BSC_INFO_CLIENT) }
@@ -65,12 +66,14 @@ export const v2Clients = {
   [ChainId.ARBITRUM_ONE]: new GraphQLClient(INFO_CLIENT_WITH_CHAIN[ChainId.ARBITRUM_ONE]),
   [ChainId.OPBNB]: new GraphQLClient(INFO_CLIENT_WITH_CHAIN[ChainId.OPBNB]),
   [ChainId.PULSE_TESTNET]: new GraphQLClient(INFO_CLIENT_WITH_CHAIN[ChainId.PULSE_TESTNET]),
+  [ChainId.HOLESKY]: new GraphQLClient(INFO_CLIENT_WITH_CHAIN[ChainId.HOLESKY]),
 }
 
 export const infoStableSwapClients = {
   [ChainId.BSC]: new GraphQLClient(STABLESWAP_SUBGRAPHS[ChainId.BSC]),
   [ChainId.ARBITRUM_ONE]: new GraphQLClient(STABLESWAP_SUBGRAPHS[ChainId.ARBITRUM_ONE]),
   [ChainId.PULSE_TESTNET]: new GraphQLClient(STABLESWAP_SUBGRAPHS[ChainId.PULSE_TESTNET]),
+  [ChainId.HOLESKY]: new GraphQLClient(STABLESWAP_SUBGRAPHS[ChainId.HOLESKY]),
 }
 
 export const infoServerClient = new GraphQLClient(INFO_CLIENT, {

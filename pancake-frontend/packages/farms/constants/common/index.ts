@@ -11,6 +11,7 @@ import {
   opBnbTokens,
   polygonZkEvmTokens,
   pulseTestnetTokens,
+  holeskyTokens,
   zkSyncTestnetTokens,
   zksyncTokens,
 } from '@pancakeswap/tokens'
@@ -61,6 +62,10 @@ export const priceHelperTokens = {
     chain: 'pulseTestnet',
     list: [pulseTestnetTokens.weth, pulseTestnetTokens.usdt],
   },
+  [ChainId.HOLESKY]: {
+    chain: 'holesky',
+    list: [holeskyTokens.weth, holeskyTokens.usdt],
+  },
 } satisfies Record<number, PriceHelper>
 
 // for testing purposes
@@ -88,4 +93,5 @@ export const DEFAULT_COMMON_PRICE: Record<FarmV3SupportedChainId, CommonPrice> =
   [ChainId.OPBNB_TESTNET]: {},
   [ChainId.OPBNB]: {},
   [ChainId.PULSE_TESTNET]: {},
+  [ChainId.HOLESKY]: {},
 }

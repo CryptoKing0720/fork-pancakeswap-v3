@@ -23,6 +23,7 @@ import {
   sepolia,
   zkSync,
   zkSyncTestnet,
+  holesky,
 } from 'wagmi/chains'
 
 export const CHAIN_QUERY_NAME = chainNames
@@ -74,6 +75,7 @@ export const L2_CHAIN_IDS: ChainId[] = [
   ChainId.ARBITRUM_SEPOLIA,
   ChainId.BASE_SEPOLIA,
   ChainId.PULSE_TESTNET,
+  ChainId.HOLESKY,
 ]
 
 export const CHAINS = [
@@ -98,4 +100,5 @@ export const CHAINS = [
   opBNBTestnet,
   scrollSepolia,
   pulsechainV4,
+  holesky,
 ]

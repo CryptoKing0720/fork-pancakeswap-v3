@@ -38,7 +38,6 @@ const NetworkSelect = ({ switchNetwork, chainId }) => {
   const { t } = useTranslation()
   const [showTestnet] = useUserShowTestnet()
 
-
   return (
     <>
       <Box px="16px" py="8px">
@@ -47,7 +46,7 @@ const NetworkSelect = ({ switchNetwork, chainId }) => {
       <UserMenuDivider />
       {chains
         .filter((chain) => {
-          if (chain.id === ChainId.PULSE_TESTNET) return true // [DAVID]
+          if (chain.id === ChainId.HOLESKY) return true // [STAR]
           if (chain.id === chainId) return true
           if ('testnet' in chain && chain.testnet) {
             return showTestnet
@@ -165,6 +164,7 @@ const SHORT_SYMBOL = {
   [ChainId.BASE_SEPOLIA]: 'Base Sepolia',
   [ChainId.ARBITRUM_SEPOLIA]: 'Arb Sepolia',
   [ChainId.PULSE_TESTNET]: 'Pulse V4',
+  [ChainId.HOLESKY]: 'ETH',
 } as const satisfies Record<ChainId, string>
 
 export const NetworkSwitcher = () => {
@@ -200,10 +200,7 @@ export const NetworkSwitcher = () => {
         mr="8px"
         placement="bottom"
         variant={isLoading ? 'pending' : isWrongNetwork ? 'danger' : 'default'}
-        avatarSrc={chainId === ChainId.PULSE_TESTNET
-          ? "pulse.svg" :
-          `${ASSET_CDN}/web/chains/${chainId}.png`
-        } // [DAVID]
+        avatarSrc={chainId === ChainId.HOLESKY ? 'eth.svg' : `${ASSET_CDN}/web/chains/${chainId}.png`} // [STAR]
         disabled={cannotChangeNetwork}
         text={
           isLoading ? (

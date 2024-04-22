@@ -20,6 +20,7 @@ export enum ChainId {
   BASE_SEPOLIA = 84532,
   SEPOLIA = 11155111,
   PULSE_TESTNET = 943,
+  HOLESKY = 17000,
 }
 
 export const testnetChainIds = [
@@ -36,4 +37,5 @@ export const testnetChainIds = [
   ChainId.ARBITRUM_SEPOLIA,
   ChainId.BASE_SEPOLIA,
   ChainId.PULSE_TESTNET,
+  ChainId.HOLESKY,
 ]

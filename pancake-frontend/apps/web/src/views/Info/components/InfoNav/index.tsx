@@ -16,7 +16,7 @@ import { ChainId } from '@pancakeswap/chains'
 import { useTranslation } from '@pancakeswap/localization'
 import { ChainLogo } from 'components/Logo/ChainLogo'
 import { ASSET_CDN } from 'config/constants/endpoints'
-import { } from 'hooks/useSwitchNetwork'
+import {} from 'hooks/useSwitchNetwork'
 import { useRouter } from 'next/router'
 import { useCallback, useMemo } from 'react'
 import { multiChainId, multiChainPaths, multiChainShortName } from 'state/info/constant'
@@ -24,7 +24,7 @@ import { useChainIdByQuery, useChainNameByQuery, useMultiChainPath } from 'state
 import { styled } from 'styled-components'
 import { chains } from 'utils/wagmi'
 import Search from 'views/Info/components/InfoSearch'
-import { arbitrum, base, bsc, linea, mainnet, opBNB, polygonZkEvm, pulsechainV4, zkSync } from 'wagmi/chains'
+import { arbitrum, base, bsc, linea, mainnet, opBNB, polygonZkEvm, pulsechainV4, zkSync, holesky } from 'wagmi/chains'
 
 const NavWrapper = styled(Flex)`
   background: ${({ theme }) => theme.colors.gradientCardHeader};
@@ -96,7 +96,7 @@ const InfoNav: React.FC<{ isStableSwap: boolean }> = ({ isStableSwap }) => {
   )
 }
 
-const targetChains = [mainnet, bsc, polygonZkEvm, zkSync, arbitrum, linea, base, opBNB, pulsechainV4] // [DAVID]
+const targetChains = [mainnet, bsc, polygonZkEvm, zkSync, arbitrum, linea, base, opBNB, pulsechainV4, holesky] // [DAVID]
 
 export const NetworkSwitcher: React.FC<{ activeIndex: number }> = ({ activeIndex }) => {
   const { t } = useTranslation()
@@ -119,9 +119,10 @@ export const NetworkSwitcher: React.FC<{ activeIndex: number }> = ({ activeIndex
       alignItems="top"
       ml="8px"
       avatarSrc={
-        multiChainId[chainName] === ChainId.PULSE_TESTNET
-          ? `/pulse.svg`
-          : `${ASSET_CDN}/web/chains/${multiChainId[chainName]}.png`}
+        multiChainId[chainName] === ChainId.HOLESKY
+          ? `/eth.svg`
+          : `${ASSET_CDN}/web/chains/${multiChainId[chainName]}.png`
+      }
       text={
         foundChain ? (
           <>

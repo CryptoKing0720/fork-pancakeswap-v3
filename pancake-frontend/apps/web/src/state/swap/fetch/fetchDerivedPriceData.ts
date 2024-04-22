@@ -72,6 +72,11 @@ const SWAP_INFO_BY_CHAIN = {
     v3: V3_SUBGRAPH_URLS[ChainId.PULSE_TESTNET],
     stable: STABLESWAP_SUBGRAPHS[ChainId.PULSE_TESTNET],
   },
+  [ChainId.HOLESKY]: {
+    v2: INFO_CLIENT_WITH_CHAIN[ChainId.HOLESKY],
+    v3: V3_SUBGRAPH_URLS[ChainId.HOLESKY],
+    stable: STABLESWAP_SUBGRAPHS[ChainId.HOLESKY],
+  },
 } satisfies Record<ChainId, Partial<ProtocolEndpoint>>
 
 export const getTokenBestTvlProtocol = async (tokenAddress: string, chainId: ChainId): Promise<Protocol | null> => {

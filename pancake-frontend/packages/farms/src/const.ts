@@ -17,6 +17,7 @@ export const supportedChainIdV3 = [
   ChainId.OPBNB,
   ChainId.OPBNB_TESTNET,
   ChainId.PULSE_TESTNET,
+  ChainId.HOLESKY,
 ] as const
 export const supportedChainId = uniq([...supportedChainIdV2, ...supportedChainIdV3])
 export const bCakeSupportedChainId = [ChainId.BSC] as const
@@ -49,6 +50,7 @@ export const masterChefV3Addresses = {
   [ChainId.OPBNB]: '0x05ddEDd07C51739d2aE21F6A9d97a8d69C2C3aaA',
   [ChainId.OPBNB_TESTNET]: '0x236e713bFF45adb30e25D1c29A887aBCb0Ea7E21',
   [ChainId.PULSE_TESTNET]: '0xcf10c31B54386bB2d203C568D345D949109E99A9',
+  [ChainId.HOLESKY]: '0x898871E6B5aB86dc93955Fd7201fB174a6658B9B',
 } as const satisfies Record<FarmV3SupportedChainId, string>
 
 export const nonBSCVaultAddresses = {

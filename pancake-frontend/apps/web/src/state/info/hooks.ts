@@ -344,6 +344,9 @@ export const useChainNameByQuery = (): MultiChainName => {
         return 'OPBNB'
       case 'pulseTestnet':
         return 'PULSE_TESTNET'
+        return 'OPBNB'
+      case 'holesky':
+        return 'HOLESKY'
       default:
         return 'BSC'
     }

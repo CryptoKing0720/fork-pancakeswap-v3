@@ -5,6 +5,7 @@ import {
   BLOCKS_CLIENT_LINEA,
   BLOCKS_CLIENT_OPBNB,
   BLOCKS_CLIENT_PULSETEST,
+  BLOCKS_CLIENT_HOLESKY,
   BLOCKS_CLIENT_ZKSYNC,
 } from 'config/constants/endpoints'
 import { GraphQLClient } from 'graphql-request'
@@ -21,10 +22,21 @@ import {
 } from 'config/constants/info'
 import mapValues from 'lodash/mapValues'
 import { arbitrum, base, bsc, linea, mainnet, opBNB, polygonZkEvm, pulsechainV4, zkSync } from 'wagmi/chains'
+import { holesky } from 'holesky'
 
-export type MultiChainName = 'BSC' | 'ETH' | 'POLYGON_ZKEVM' | 'ZKSYNC' | 'ARB' | 'LINEA' | 'BASE' | 'OPBNB' | 'PULSE_TESTNET'
+export type MultiChainName =
+  | 'BSC'
+  | 'ETH'
+  | 'POLYGON_ZKEVM'
+  | 'ZKSYNC'
+  | 'ARB'
+  | 'LINEA'
+  | 'BASE'
+  | 'OPBNB'
+  | 'PULSE_TESTNET'
+  | 'HOLESKY'
 
-export type MultiChainNameExtend = MultiChainName | 'BSC_TESTNET' | 'ZKSYNC_TESTNET' | 'PULSE_TESTNET'
+export type MultiChainNameExtend = MultiChainName | 'BSC_TESTNET' | 'ZKSYNC_TESTNET' | 'PULSE_TESTNET' | 'HOLESKY'
 
 export const multiChainName: Record<number | string, MultiChainNameExtend> = {
   [ChainId.BSC]: 'BSC',
@@ -37,6 +49,7 @@ export const multiChainName: Record<number | string, MultiChainNameExtend> = {
   [ChainId.OPBNB]: 'OPBNB',
   [ChainId.ARBITRUM_ONE]: 'ARB',
   [ChainId.PULSE_TESTNET]: 'PULSE_TESTNET',
+  [ChainId.HOLESKY]: 'HOLESKY',
 }
 
 export const multiChainShortName: Record<number, string> = {
@@ -52,7 +65,8 @@ export const multiChainQueryMainToken: Record<MultiChainName, string> = {
   LINEA: 'ETH',
   BASE: 'ETH',
   OPBNB: 'ETH',
-  PULSE_TESTNET: 'tPLS'
+  PULSE_TESTNET: 'tPLS',
+  HOLESKY: 'ETH',
 }
 
 export const multiChainBlocksClient: Record<MultiChainNameExtend, string> = {
@@ -67,6 +81,7 @@ export const multiChainBlocksClient: Record<MultiChainNameExtend, string> = {
   BASE: BLOCKS_CLIENT_BASE,
   OPBNB: BLOCKS_CLIENT_OPBNB,
   PULSE_TESTNET: BLOCKS_CLIENT_PULSETEST,
+  HOLESKY: BLOCKS_CLIENT_HOLESKY,
 }
 
 export const multiChainStartTime = {
@@ -89,7 +104,8 @@ export const multiChainId: Record<MultiChainName, ChainId> = {
   LINEA: ChainId.LINEA,
   BASE: ChainId.BASE,
   OPBNB: ChainId.OPBNB,
-  PULSE_TESTNET: ChainId.PULSE_TESTNET
+  PULSE_TESTNET: ChainId.PULSE_TESTNET,
+  HOLESKY: ChainId.HOLESKY,
 }
 
 export const multiChainPaths = {
@@ -102,6 +118,7 @@ export const multiChainPaths = {
   [ChainId.BASE]: '/base',
   [ChainId.OPBNB]: '/opbnb',
   [ChainId.PULSE_TESTNET]: '/pulseTestnet',
+  [ChainId.HOLESKY]: '/holesky',
 }
 
 export const multiChainQueryClient = {
@@ -114,12 +131,14 @@ export const multiChainQueryClient = {
   BASE: v2Clients[ChainId.BASE],
   OPBNB: v2Clients[ChainId.OPBNB],
   PULSE_TESTNET: v2Clients[ChainId.PULSE_TESTNET],
+  HOLESKY: v2Clients[ChainId.HOLESKY],
 }
 
 export const multiChainQueryStableClient = {
   BSC: infoStableSwapClients[ChainId.BSC],
   ARB: infoStableSwapClients[ChainId.ARBITRUM_ONE],
   PULSE_TESTNET: infoStableSwapClients[ChainId.PULSE_TESTNET],
+  HOLESKY: infoStableSwapClients[ChainId.HOLESKY],
 }
 
 export const STABLESWAP_SUBGRAPHS_START_BLOCK = {
@@ -135,7 +154,8 @@ export const multiChainScan: Record<MultiChainName, string> = {
   LINEA: linea.blockExplorers.default.name,
   BASE: base.blockExplorers.default.name,
   OPBNB: opBNB.blockExplorers.default.name,
-  PULSE_TESTNET: pulsechainV4.blockExplorers.default.name
+  PULSE_TESTNET: pulsechainV4.blockExplorers.default.name,
+  HOLESKY: holesky.blockExplorers.default.name,
 }
 
 export const multiChainTokenBlackList: Record<MultiChainName, string[]> = mapValues(
@@ -149,6 +169,7 @@ export const multiChainTokenBlackList: Record<MultiChainName, string[]> = mapVal
     BASE: ['0x'],
     OPBNB: ['0x'],
     PULSE_TESTNET: ['0x'],
+    HOLESKY: ['0x'],
   },
   (val) => val.map((address) => address.toLowerCase()),
 )
@@ -164,6 +185,7 @@ export const multiChainTokenWhiteList: Record<MultiChainName, string[]> = mapVal
     BASE: [],
     OPBNB: [],
     PULSE_TESTNET: [],
+    HOLESKY: [],
   },
   (val) => val.map((address) => address.toLowerCase()),
 )

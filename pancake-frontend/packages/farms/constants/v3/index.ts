@@ -31,6 +31,7 @@ export const farmsV3ConfigChainMap: Record<FarmV3SupportedChainId, ComputedFarmC
   [ChainId.OPBNB_TESTNET]: opBnbTestnetFarms,
   [ChainId.OPBNB]: opBNBFarms,
   [ChainId.PULSE_TESTNET]: [],
+  [ChainId.HOLESKY]: [],
 }
 
 export type Addresses = {

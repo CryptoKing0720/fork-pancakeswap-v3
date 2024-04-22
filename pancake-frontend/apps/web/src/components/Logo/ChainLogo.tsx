@@ -13,7 +13,8 @@ export const ChainLogo = memo(
           alt={`chain-${chainId}`}
           style={{ maxHeight: `${height}px` }}
           src={
-            chainId === ChainId.PULSE_TESTNET ? "/pulse.svg" // [DAVID]
+            chainId === ChainId.HOLESKY
+              ? '/svg.svg' // [STAR]
               : `${ASSET_CDN}/web/chains/${chainId}.png`
           }
           width={width}
