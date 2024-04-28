@@ -781,7 +781,7 @@ exports[`PancakeSwap Universal Router Trade > mixed > should encodes a mixed exa
         "value": [
           "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
           "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-          "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+          "0x51B279055E4f264BbB38AAB6FB4f62E18Cc2a234"
         ]
       },
       {
@@ -947,7 +947,7 @@ exports[`PancakeSwap Universal Router Trade > mixed > should encodes a mixed exa
         "name": "path",
         "value": [
           "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-          "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+          "0x51B279055E4f264BbB38AAB6FB4f62E18Cc2a234"
         ]
       },
       {
@@ -1034,7 +1034,7 @@ exports[`PancakeSwap Universal Router Trade > mixed > should encodes a mixed exa
         "type": "address[]",
         "name": "path",
         "value": [
-          "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+          "0x51B279055E4f264BbB38AAB6FB4f62E18Cc2a234",
           "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ]
       },
@@ -1350,7 +1350,7 @@ exports[`PancakeSwap Universal Router Trade > v2 > should encode a exactInput ET
         "value": [
           "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
           "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-          "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+          "0x51B279055E4f264BbB38AAB6FB4f62E18Cc2a234"
         ]
       },
       {
@@ -1366,7 +1366,7 @@ exports[`PancakeSwap Universal Router Trade > v2 > should encode a exactInput ET
       {
         "type": "address",
         "name": "token",
-        "value": "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        "value": "0x51B279055E4f264BbB38AAB6FB4f62E18Cc2a234"
       },
       {
         "type": "address",
@@ -1386,7 +1386,7 @@ exports[`PancakeSwap Universal Router Trade > v2 > should encode a exactInput ET
       {
         "type": "address",
         "name": "token",
-        "value": "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        "value": "0x51B279055E4f264BbB38AAB6FB4f62E18Cc2a234"
       },
       {
         "type": "address",
@@ -1444,7 +1444,7 @@ exports[`PancakeSwap Universal Router Trade > v2 > should encode a exactInput ET
         "value": [
           "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
           "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-          "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+          "0x51B279055E4f264BbB38AAB6FB4f62E18Cc2a234"
         ]
       },
       {
@@ -1460,7 +1460,7 @@ exports[`PancakeSwap Universal Router Trade > v2 > should encode a exactInput ET
       {
         "type": "address",
         "name": "token",
-        "value": "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        "value": "0x51B279055E4f264BbB38AAB6FB4f62E18Cc2a234"
       },
       {
         "type": "address",
@@ -1480,7 +1480,7 @@ exports[`PancakeSwap Universal Router Trade > v2 > should encode a exactInput ET
       {
         "type": "address",
         "name": "token",
-        "value": "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        "value": "0x51B279055E4f264BbB38AAB6FB4f62E18Cc2a234"
       },
       {
         "type": "address",
@@ -1538,7 +1538,7 @@ exports[`PancakeSwap Universal Router Trade > v2 > should encode a exactInput ET
         "value": [
           "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
           "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-          "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+          "0x51B279055E4f264BbB38AAB6FB4f62E18Cc2a234"
         ]
       },
       {
@@ -1592,7 +1592,7 @@ exports[`PancakeSwap Universal Router Trade > v2 > should encode a exactInput ET
         "value": [
           "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
           "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-          "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+          "0x51B279055E4f264BbB38AAB6FB4f62E18Cc2a234"
         ]
       },
       {
@@ -2327,7 +2327,7 @@ exports[`PancakeSwap Universal Router Trade > v2 > should encode exactInput USDT
         "type": "address[]",
         "name": "path",
         "value": [
-          "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+          "0x51B279055E4f264BbB38AAB6FB4f62E18Cc2a234",
           "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
           "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ]

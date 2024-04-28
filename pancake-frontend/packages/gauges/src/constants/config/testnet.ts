@@ -89,7 +89,7 @@ export const CONFIG_TESTNET: GaugeConfig[] = [
     type: GaugeType.ALM,
     pairName: 'USDC-USDT (RANGE#2)',
     token0Address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
-    token1Address: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
+    token1Address: '0x51B279055E4f264BbB38AAB6FB4f62E18Cc2a234',
   },
   {
     gid: 9,

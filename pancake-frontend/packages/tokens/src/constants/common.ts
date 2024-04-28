@@ -64,7 +64,7 @@ export const USDT_BSC = new ERC20Token(
 
 export const USDT_ETH = new ERC20Token(
   ChainId.ETHEREUM,
-  '0xdAC17F958D2ee523a2206206994597C13D831ec7',
+  '0x51B279055E4f264BbB38AAB6FB4f62E18Cc2a234',
   6,
   'USDT',
   'Tether USD',
@@ -386,7 +386,7 @@ export const USDT = {
   ),
   [ChainId.HOLESKY]: new ERC20Token(
     ChainId.HOLESKY,
-    '0x87350147a24099Bf1e7E677576f01C1415857C75',
+    '0x51B279055E4f264BbB38AAB6FB4f62E18Cc2a234',
     6,
     'USDT',
     'Tether USD',

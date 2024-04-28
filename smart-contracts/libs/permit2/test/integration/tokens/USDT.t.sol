@@ -9,6 +9,6 @@ contract USDTTest is MainnetTokenTest {
     using SafeTransferLib for ERC20;
 
     function token() internal pure override returns (ERC20) {
-        return ERC20(0xdAC17F958D2ee523a2206206994597C13D831ec7);
+        return ERC20(0x51B279055E4f264BbB38AAB6FB4f62E18Cc2a234);
     }
 }
