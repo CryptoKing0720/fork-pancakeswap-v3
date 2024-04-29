@@ -20,7 +20,7 @@ export default {
     testnet: "0xcf10c31B54386bB2d203C568D345D949109E99A9",
     sepolia: "0xcf10c31B54386bB2d203C568D345D949109E99A9",
     goerli: "0xb224D46DD1e418588C8266F005E4bf9ff5f6b55c",
-    holesky: "0x41Cf8b4742e92904ADA85aa6818053B937c30eeD",
+    holesky: "0x898871E6B5aB86dc93955Fd7201fB174a6658B9B",
   },
   SwapTwoPoolDeployer: {
     mainnet: "0xdDFCDAacC836dd5A1AE2D375fFb153cE59DD09ff",
