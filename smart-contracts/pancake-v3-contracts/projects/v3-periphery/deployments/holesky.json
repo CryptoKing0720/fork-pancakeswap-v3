@@ -1,9 +1,9 @@
 {
-  "SwapRouter": "0x5E2bCC7fa83cd9d6Ab32f3057BBe7Ec602947817",
-  "V3Migrator": "0x3eaB8361ed1B3f46F5C7dd9fBc60B5357bb035EC",
-  "QuoterV2": "0x59873149aBb60821988feb632bD5a34FBBaF2505",
-  "TickLens": "0xd54d17CbAf7D4A0F6423aD5BE6bA48f30D65dc4D",
-  "NonfungibleTokenPositionDescriptor": "0x7D66b5970B53872c6b7356803b45178C8843F933",
-  "NonfungiblePositionManager": "0x088Fc1c0E4b60cd93b3193Fa1E91f1Cd3b9023AE",
-  "PancakeInterfaceMulticall": "0x8546BB2af775b961D8a7c026115691cA0B47e4B8"
+  "SwapRouter": "0xCF6A090d332F12E090a45a302259cbf96393Ecf8",
+  "V3Migrator": "0xbEb12303c0DadFD30ae17CF3D0FB37d1cD1077B9",
+  "QuoterV2": "0x95Aa0247767eF47a05c0AC408EcEeEed34e52F75",
+  "TickLens": "0x431663b95a594d6aE2dc785B815c456e801dF536",
+  "NonfungibleTokenPositionDescriptor": "0x718eA053F9A37b75180A716087F7D07008e7a467",
+  "NonfungiblePositionManager": "0x9C3Ff0e06A6dd44dEe6d5F24c2f51d2f295bdA7F",
+  "PancakeInterfaceMulticall": "0x18fcA448d48e9Ab0057F06417F7DA06Acea42f42"
 }

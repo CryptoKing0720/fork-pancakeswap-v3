@@ -15,7 +15,7 @@ export default {
     hardhat: '0x6725f303b657a9451d8ba641348b6761a6cc7a17',
     bscTestnet: '0x8F78BECb5DECc1C083BfC3B182ec09c844a68532',
     goerli: '0x09C65bC891bf39DAF771e85F2203B898402fF3CF',
-    holesky: '0x49Ea983aBB5777F2A55A4A3251f20A0299C46661',
+    holesky: '0x9C3Ff0e06A6dd44dEe6d5F24c2f51d2f295bdA7F',
   },
   stableFactory: {
     hardhat: '0x6725f303b657a9451d8ba641348b6761a6cc7a17',

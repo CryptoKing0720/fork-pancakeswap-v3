@@ -4109,7 +4109,8 @@ bs58check@^2.1.2:
     safe-buffer "^5.1.2"
 
 bsc-library@1.0.0:
-  resolved "git+ssh://git@github.com/projects/bsc-library.git"
+  version "1.0.0"
+  resolved "file:projects/bsc-library"
 
 buffer-from@^1.0.0:
   version "1.1.1"
@@ -6165,12 +6166,6 @@ eth-query@^2.0.2, eth-query@^2.1.0, eth-query@^2.1.2:
   dependencies:
     json-rpc-random-id "^1.0.0"
     xtend "^4.0.1"
-
-eth-sig-util@^1.4.2:
-  version "1.4.2"
-  dependencies:
-    ethereumjs-abi "git+https://github.com/ethereumjs/ethereumjs-abi.git"
-    ethereumjs-util "^5.1.1"
 
 eth-sig-util@3.0.0:
   version "3.0.0"
@@ -14231,7 +14226,7 @@ web3-provider-engine@14.2.1:
     cross-fetch "^2.1.0"
     eth-block-tracker "^3.0.0"
     eth-json-rpc-infura "^3.1.0"
-    eth-sig-util "^1.4.2"
+    eth-sig-util "3.0.0"
     ethereumjs-block "^1.2.2"
     ethereumjs-tx "^1.2.0"
     ethereumjs-util "^5.1.5"
