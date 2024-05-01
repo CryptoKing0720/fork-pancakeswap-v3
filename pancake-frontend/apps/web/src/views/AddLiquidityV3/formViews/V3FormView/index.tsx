@@ -320,7 +320,7 @@ export default function V3FormView({
               setAttemptingTxn(false)
             })
         })
-        .catch((e) => console.log(`[DAVID] ESTIMATE GAS FAILED! ${e}`))
+        .catch((e) => console.log(`[KING] ESTIMATE GAS FAILED! ${e}`))
     }
   }, [
     account,
@@ -516,7 +516,7 @@ export default function V3FormView({
           gridAutoRows: 'max-content',
           gridAutoColumns: '100%',
         }}
-        // disabled={!feeAmount || invalidPool || (noLiquidity && !startPriceTypedValue) || (!priceLower && !priceUpper)} // [DAVID]
+        // disabled={!feeAmount || invalidPool || (noLiquidity && !startPriceTypedValue) || (!priceLower && !priceUpper)}
       >
         <PreTitle mb="8px">{t('Deposit Amount')}</PreTitle>
 

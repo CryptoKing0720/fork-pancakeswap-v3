@@ -117,7 +117,7 @@ export function UniversalAddLiquidity({
       preferredFeeAmount ||
       (feeAmountFromUrl && Object.values(FeeAmount).includes(parseFloat(feeAmountFromUrl))
         ? parseFloat(feeAmountFromUrl)
-        : FeeAmount.MEDIUM) // undefined // DAVID
+        : FeeAmount.MEDIUM) // undefined
     )
   }, [preferredFeeAmount, feeAmountFromUrl])
 
@@ -307,7 +307,7 @@ export function UniversalAddLiquidity({
               />
             </FlexGap>
             <DynamicSection
-            // disabled={!baseCurrency || !currencyB} // DAVID
+            // disabled={!baseCurrency || !currencyB} // KING
             >
               {preferredSelectType !== SELECTOR_TYPE.V2 &&
                 stableConfig.stableSwapConfig &&

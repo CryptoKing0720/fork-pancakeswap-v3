@@ -47,7 +47,7 @@ const fetchTopPools = async (chainName: MultiChainName | null, timestamp24hAgo: 
         blacklist: multiChainTokenBlackList[chainName],
       },
     )
-    console.log(`[DAVID] fetchTopPools :: CLIENT = ${JSON.stringify(data)}`)
+    console.log(`[KING] fetchTopPools :: CLIENT = ${JSON.stringify(data)}`)
     if (data.pairDayDatas.length === 0)
       data = await getMultiChainQueryEndPointWithStableSwap(chainName).request<TopPoolsResponse>(
         getQuery(firstCount, ''),
