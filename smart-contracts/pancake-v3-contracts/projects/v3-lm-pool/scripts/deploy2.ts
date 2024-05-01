@@ -26,12 +26,12 @@ async function main() {
   if (!pancakeV3LmPoolDeployer_addr) {
     const PancakeV3LmPoolDeployer = await ethers.getContractFactory('PancakeV3LmPoolDeployer')
     const pancakeV3LmPoolDeployer = await PancakeV3LmPoolDeployer.deploy(mcV3DeployedContracts.MasterChefV3)
-    await pancakeV3LmPoolDeployer.deployed();
-    pancakeV3LmPoolDeployer_addr = pancakeV3LmPoolDeployer.address;
+    await pancakeV3LmPoolDeployer.deployed()
+    pancakeV3LmPoolDeployer_addr = pancakeV3LmPoolDeployer.address
   }
 
   console.log('pancakeV3LmPoolDeployer deployed to:', pancakeV3LmPoolDeployer_addr)
-  await sleep(10000);
+  await sleep(10000)
   await verifyContract(pancakeV3LmPoolDeployer_addr, [mcV3DeployedContracts.MasterChefV3])
   const pancakeV3Factory = new ethers.Contract(pancakeV3Factory_address, abi, owner)
 

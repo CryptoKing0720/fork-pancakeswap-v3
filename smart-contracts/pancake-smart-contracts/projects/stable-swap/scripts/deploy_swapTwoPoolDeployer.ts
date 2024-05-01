@@ -42,7 +42,7 @@ async function main() {
 
   console.log("pancakeStableSwapTwoPoolDeployer deployed to:", pancakeStableSwapTwoPoolDeployer_address);
   await sleep(10000);
-  await verify("0x4b0d72C41149ff12B1f7cBd570fcD5F1B7cBB956");
+  await verify(pancakeStableSwapTwoPoolDeployer_address);
 }
 
 main()

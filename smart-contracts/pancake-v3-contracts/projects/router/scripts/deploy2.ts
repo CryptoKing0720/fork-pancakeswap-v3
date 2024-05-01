@@ -30,7 +30,7 @@ async function main() {
 
   /** SmartRouterHelper */
   console.log('Deploying SmartRouterHelper...')
-  let smartRouterHelper_address = '0x5e85B7e1a2133E42Ce4660A23F02cc176B21e394'
+  let smartRouterHelper_address = ''
   let SmartRouterHelper
   if (!smartRouterHelper_address) {
     SmartRouterHelper = await ethers.getContractFactory('SmartRouterHelper')
@@ -45,7 +45,7 @@ async function main() {
 
   /** SmartRouter */
   console.log('Deploying SmartRouter...')
-  let smartRouter_address = '0xa2Ccb4E30F40644b897bE7f878902e01161DD6c0'
+  let smartRouter_address = ''
   let SmartRouter
   if (!smartRouter_address) {
     SmartRouter = await ethers.getContractFactory('SmartRouter', {
@@ -80,7 +80,7 @@ async function main() {
   ])
 
   /** MixedRouteQuoterV1 */
-  let mixedRouteQuoterV1_address = '0xf22ab94Da7927c30Ec4B6fca616eab677AEA69De'
+  let mixedRouteQuoterV1_address = ''
   let MixedRouteQuoterV1
   if (!mixedRouteQuoterV1_address) {
     MixedRouteQuoterV1 = await ethers.getContractFactory('MixedRouteQuoterV1', {
@@ -111,7 +111,7 @@ async function main() {
   ])
 
   /** QuoterV2 */
-  let quoterV2_address = '0xB4575fFe6b6c45b025c65C70183097c2b40bb4C2'
+  let quoterV2_address = ''
   let QuoterV2
   if (!quoterV2_address) {
     QuoterV2 = await ethers.getContractFactory('QuoterV2', {
@@ -130,7 +130,7 @@ async function main() {
   await verifyContract(quoterV2_address, [pancakeV3PoolDeployer_address, pancakeV3Factory_address, config.WNATIVE])
 
   /** TokenValidator */
-  let tokenValidator_address = '0x61E860130f66a479a9C1B337E6f0a3ECeC2ef1f2'
+  let tokenValidator_address = ''
   let TokenValidator
   if (!tokenValidator_address) {
     TokenValidator = await ethers.getContractFactory('TokenValidator', {

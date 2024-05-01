@@ -53,8 +53,7 @@ async function main() {
   }
 
   // Set FactoryAddress for pancakeV3PoolDeployer.
-  await pancakeV3PoolDeployer.setFactoryAddress(pancakeV3Factory_address);
-
+  await pancakeV3PoolDeployer.setFactoryAddress(pancakeV3Factory_address)
 
   const contracts = {
     PancakeV3Factory: pancakeV3Factory_address,

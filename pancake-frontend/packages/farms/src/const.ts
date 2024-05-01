@@ -50,7 +50,7 @@ export const masterChefV3Addresses = {
   [ChainId.OPBNB]: '0x05ddEDd07C51739d2aE21F6A9d97a8d69C2C3aaA',
   [ChainId.OPBNB_TESTNET]: '0x236e713bFF45adb30e25D1c29A887aBCb0Ea7E21',
   [ChainId.PULSE_TESTNET]: '0xcf10c31B54386bB2d203C568D345D949109E99A9',
-  [ChainId.HOLESKY]: '0x898871E6B5aB86dc93955Fd7201fB174a6658B9B',
+  [ChainId.HOLESKY]: '0x9F171A512bbE35e648ffb012E0cD2B9212360b57',
 } as const satisfies Record<FarmV3SupportedChainId, string>
 
 export const nonBSCVaultAddresses = {

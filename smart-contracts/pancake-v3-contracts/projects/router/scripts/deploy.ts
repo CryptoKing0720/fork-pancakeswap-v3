@@ -1,55 +1,50 @@
-import { ethers, network } from "hardhat";
-import config from "../config";
+import { ethers, network } from 'hardhat'
+import config from '../config'
 
-import { parseEther } from "ethers/lib/utils";
-const currentNetwork = network.name;
+import { parseEther } from 'ethers/lib/utils'
+const currentNetwork = network.name
 
 async function main() {
-    // Remember to update the init code hash in SC for different chains before deploying
+  // Remember to update the init code hash in SC for different chains before deploying
 
+  /** SmartRouterHelper */
+  console.log('Deploying SmartRouterHelper...')
 
-    
-    /** SmartRouterHelper */
-    console.log("Deploying SmartRouterHelper...");
+  const SmartRouterHelper = await ethers.getContractFactory('SmartRouterHelper')
 
-    const SmartRouterHelper = await ethers.getContractFactory("SmartRouterHelper");
+  const smartRouterHelper = await SmartRouterHelper.deploy()
 
-    const smartRouterHelper = await SmartRouterHelper.deploy();
+  await smartRouterHelper.deployed()
 
-    await smartRouterHelper.deployed();
+  console.log('SmartRouterHelper deployed to:', smartRouterHelper.address)
+  /** SmartRouter */
+  const networkName = network.name
 
-    console.log("SmartRouterHelper deployed to:", smartRouterHelper.address);
+  console.log('Deploying SmartRouter...')
 
+  const SmartRouter = await ethers.getContractFactory('SmartRouter', {
+    libraries: {
+      SmartRouterHelper: smartRouterHelper.address,
+    },
+  })
 
-w
-    /** SmartRouter */
-    const networkName = network.name;
+  const smartRouter = await SmartRouter.deploy(
+    config.factoryV2[networkName],
+    config.factoryV3[networkName],
+    config.positionManager[networkName],
+    config.stableFactory[networkName],
+    config.stableInfo[networkName],
+    config.WETH[networkName]
+  )
 
-    console.log("Deploying SmartRouter...");
+  await smartRouter.deployed()
 
-    const SmartRouter = await ethers.getContractFactory("SmartRouter", {
-        libraries: {
-            SmartRouterHelper: smartRouterHelper.address
-        }
-    });
-
-    const smartRouter = await SmartRouter.deploy(
-        config.factoryV2[networkName],
-        config.factoryV3[networkName],
-        config.positionManager[networkName],
-        config.stableFactory[networkName],
-        config.stableInfo[networkName],
-        config.WETH[networkName],
-    );
-
-    await smartRouter.deployed();
-
-    console.log("SmartRouter deployed to:", smartRouter.address);
+  console.log('SmartRouter deployed to:', smartRouter.address)
 }
 
 main()
-    .then(() => process.exit(0))
-    .catch((error) => {
-        console.error(error);
-        process.exit(1);
-    });
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error)
+    process.exit(1)
+  })
