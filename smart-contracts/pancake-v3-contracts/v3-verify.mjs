@@ -1,5 +1,6 @@
 #!/usr/bin/env zx
 // import 'zx/globals'
+require('dotenv').config({ path: require('find-config')('.env') })
 
 const networks = {
   eth: 'eth',
@@ -7,6 +8,7 @@ const networks = {
   bscMainnet: 'bscMainnet',
   bscTestnet: 'bscTestnet',
   hardhat: 'hardhat',
+  holesky: 'holesky',
 }
 
 let network = process.env.NETWORK

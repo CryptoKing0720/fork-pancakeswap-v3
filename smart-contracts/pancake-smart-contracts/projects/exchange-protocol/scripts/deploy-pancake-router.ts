@@ -26,7 +26,7 @@ async function main() {
 
   const pancakeRouter = await PancakeRouter.deploy(
     config.PancakeFactory[networkName],
-    "0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889"
+    "0x94373a4919B3240D86eA41593D5eBa789FEF3848"
   );
 
   await pancakeRouter.deployed();

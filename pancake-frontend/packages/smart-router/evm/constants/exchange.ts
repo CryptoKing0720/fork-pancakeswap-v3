@@ -52,7 +52,7 @@ export const SMART_ROUTER_ADDRESSES = {
   [ChainId.ARBITRUM_SEPOLIA]: '0x678Aa4bF4E210cf2166753e054d5b7c31cc7fa86',
   [ChainId.BASE_SEPOLIA]: '0x678Aa4bF4E210cf2166753e054d5b7c31cc7fa86',
   [ChainId.PULSE_TESTNET]: '0x9588C29E0A87cA723b4AB15171C61093A045f008',
-  [ChainId.HOLESKY]: '0xa923954F8cC766fB11c5a28d7267d1680a013960',
+  [ChainId.HOLESKY]: '0x330368DFe6dEB214eBba2E59677578028163bb57',
 } as const satisfies Record<ChainId, string>
 
 export const V2_ROUTER_ADDRESS: ChainMap<string> = {
@@ -77,7 +77,7 @@ export const V2_ROUTER_ADDRESS: ChainMap<string> = {
   [ChainId.ARBITRUM_SEPOLIA]: '0x8cFe327CEc66d1C090Dd72bd0FF11d690C33a2Eb',
   [ChainId.BASE_SEPOLIA]: '0x8cFe327CEc66d1C090Dd72bd0FF11d690C33a2Eb',
   [ChainId.PULSE_TESTNET]: '0x5C449F11C719b41fE92f35Dd9ffDA1CCBC8f9021',
-  [ChainId.HOLESKY]: '0x95Aa0247767eF47a05c0AC408EcEeEed34e52F75',
+  [ChainId.HOLESKY]: '0x7013DC9544b461dd597FaC8dCecD41A79D143327',
 }
 
 export const STABLE_SWAP_INFO_ADDRESS: ChainMap<string> = {
@@ -102,7 +102,7 @@ export const STABLE_SWAP_INFO_ADDRESS: ChainMap<string> = {
   [ChainId.ARBITRUM_SEPOLIA]: '',
   [ChainId.BASE_SEPOLIA]: '',
   [ChainId.PULSE_TESTNET]: '0x031Fe28E162192e2fC79B132efEc516ff068F3F3',
-  [ChainId.HOLESKY]: '0x2404ED95dEE3C38D1248389dB45F27412d10Fdfd',
+  [ChainId.HOLESKY]: '0xEE6316A147a13b6AdE349aB893f419CfC40DD07E',
 }
 
 // used to construct intermediary pairs for trading
@@ -136,7 +136,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.ARBITRUM_SEPOLIA]: [arbSepoliaTokens.usdc, arbSepoliaTokens.weth],
   [ChainId.BASE_SEPOLIA]: [baseSepoliaTokens.usdc, baseSepoliaTokens.weth],
   [ChainId.PULSE_TESTNET]: [pulseTestnetTokens.usdc, pulseTestnetTokens.weth],
-  [ChainId.HOLESKY]: [holeskyTokens.usdc, holeskyTokens.weth],
+  [ChainId.HOLESKY]: [WNATIVE[ChainId.HOLESKY], USDT[ChainId.HOLESKY]],
 }
 
 const czusd = new ERC20Token(ChainId.BSC, '0xE68b79e51bf826534Ff37AA9CeE71a3842ee9c70', 18, 'CZUSD', 'CZUSD')

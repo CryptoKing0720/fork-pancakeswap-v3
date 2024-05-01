@@ -1,6 +1,6 @@
 import { ethers, network, run } from "hardhat";
 
-const FEE_SETTER = "0x24ef62f5060D6BcAB0f0732B515137C508499126"
+const FEE_SETTER = "0x0BaE72613E5f73fF0c094484b12c4EE11Ed072De";
 
 const deploy = async (): Promise<string> => {
   // Compile contracts
@@ -31,22 +31,20 @@ const deploy = async (): Promise<string> => {
 
   console.log("PancackeFactory deployed to:", pancackeFactory.address);
   return pancackeFactory.address;
-}
+};
 
-const verify = async (address:string, parameter:any[] = []) => {
-  console.log(`Veryfing ${address} ...`)
-  await run('verify:verify', {
+const verify = async (address: string, parameter: any[] = []) => {
+  console.log(`Veryfing ${address} ...`);
+  await run("verify:verify", {
     address: address,
-    constructorArguments: parameter
-  })
-  console.log("Success!")
-}
+    constructorArguments: parameter,
+  });
+  console.log("Success!");
+};
 
 const main = async () => {
   const contractAddr = await deploy();
-  await verify(
-  contractAddr, 
-  [FEE_SETTER]);
+  await verify(contractAddr, [FEE_SETTER]);
 };
 
 main()

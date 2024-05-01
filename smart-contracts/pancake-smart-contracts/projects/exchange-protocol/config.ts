@@ -1,6 +1,6 @@
 export default {
   PancakeFactory: {
-    holesky: "0x56397BF4D4d464de4be02ad4F083A799a5b93E1d",
+    holesky: "0xE8dE10Cdc768BABCb9667709b099D0B8FC21b4EA",
   },
   PancakeRouter: {
     mainnet: "0x10ed43c718714eb63d5aa57b78b54704e256024e",

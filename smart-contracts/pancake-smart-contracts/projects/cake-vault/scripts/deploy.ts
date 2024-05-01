@@ -71,7 +71,7 @@ const main = async () => {
     }
     await sleep(10000);
     await verify(cake_addr);
-    console.log("[KING] Cake deployed to:", cake_addr);
+    console.log("Cake deployed to:", cake_addr);
 
     syrup_addr = "";
     if (!syrup_addr) {
@@ -79,7 +79,7 @@ const main = async () => {
       await syrup.deployed();
       syrup_addr = syrup.address;
     }
-    console.log("[KING] Syrup deployed to:", syrup_addr);
+    console.log("Syrup deployed to:", syrup_addr);
     await sleep(10000);
     await verify(syrup_addr, [cake_addr]);
 
@@ -95,7 +95,7 @@ const main = async () => {
       await masterchef.deployed();
       masterchef_addr = masterchef.address;
     }
-    console.log("[KING] MasterChef deployed to:", masterchef_addr);
+    console.log("MasterChef deployed to:", masterchef_addr);
     await sleep(10000);
     await verify(masterchef_addr, [cake_addr, syrup_addr, admin, ethers.BigNumber.from("1"), currentBlock]);
     console.log("Admin:", admin);
