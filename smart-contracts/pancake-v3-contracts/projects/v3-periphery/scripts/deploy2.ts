@@ -67,19 +67,12 @@ async function main() {
   const pancakeV3PoolDeployer_address = deployedContracts.PancakeV3PoolDeployer
   const pancakeV3Factory_address = deployedContracts.PancakeV3Factory
 
-  let SwapRouter_address = ''
-  let SwapRouter
-  if (!SwapRouter_address) {
-    SwapRouter = new ContractFactory(artifacts.SwapRouter.abi, artifacts.SwapRouter.bytecode, owner)
+  const SwapRouter = new ContractFactory(artifacts.SwapRouter.abi, artifacts.SwapRouter.bytecode, owner)
     const swapRouter = await SwapRouter.deploy(pancakeV3PoolDeployer_address, pancakeV3Factory_address, config.WNATIVE)
-    await swapRouter.deployed()
-    SwapRouter_address = swapRouter.address
-  } else {
-    SwapRouter = new ethers.Contract(SwapRouter_address, artifacts.SwapRouter.abi, owner)
-  }
 
   // await tryVerify(swapRouter, [pancakeV3PoolDeployer_address, pancakeV3Factory_address, config.WNATIVE])
-  console.log('swapRouter', SwapRouter_address)
+  console.log('swapRouter', swapRouter.address)
+
   // const NFTDescriptor = new ContractFactory(artifacts.NFTDescriptor.abi, artifacts.NFTDescriptor.bytecode, owner)
   // const nftDescriptor = await NFTDescriptor.deploy()
   // await tryVerify(nftDescriptor)
@@ -128,10 +121,7 @@ async function main() {
   // console.log('nonfungibleTokenPositionDescriptor', nonfungibleTokenPositionDescriptor.address)
 
   // off chain version
-  let NonfungibleTokenPositionDescriptor_address = ''
-  let NonfungibleTokenPositionDescriptor
-  if (!NonfungibleTokenPositionDescriptor_address) {
-    NonfungibleTokenPositionDescriptor = new ContractFactory(
+  const NonfungibleTokenPositionDescriptor = new ContractFactory(
       artifacts.NonfungibleTokenPositionDescriptorOffChain.abi,
       artifacts.NonfungibleTokenPositionDescriptorOffChain.bytecode,
       owner
@@ -141,23 +131,11 @@ async function main() {
       baseTokenUri,
     ])
     await nonfungibleTokenPositionDescriptor.deployed()
-    NonfungibleTokenPositionDescriptor_address = nonfungibleTokenPositionDescriptor.address
-  } else {
-    NonfungibleTokenPositionDescriptor = new ethers.Contract(
-      NonfungibleTokenPositionDescriptor_address,
-      artifacts.NonfungibleTokenPositionDescriptor.abi,
-      owner
-    )
-  }
-  console.log('nonfungibleTokenPositionDescriptor', NonfungibleTokenPositionDescriptor_address)
+  console.log('nonfungibleTokenPositionDescriptor', nonfungibleTokenPositionDescriptor.address)
 
   // await tryVerify(nonfungibleTokenPositionDescriptor)
 
-  let NonfungiblePositionManager_address = ''
-  let NonfungiblePositionManager
-
-  if (!NonfungiblePositionManager_address) {
-    NonfungiblePositionManager = new ContractFactory(
+  const NonfungiblePositionManager = new ContractFactory(
       artifacts.NonfungiblePositionManager.abi,
       artifacts.NonfungiblePositionManager.bytecode,
       owner
@@ -166,17 +144,8 @@ async function main() {
       pancakeV3PoolDeployer_address,
       pancakeV3Factory_address,
       config.WNATIVE,
-      NonfungibleTokenPositionDescriptor_address
+    nonfungibleTokenPositionDescriptor.address
     )
-    await nonfungiblePositionManager.deployed()
-    NonfungiblePositionManager_address = nonfungiblePositionManager.address
-  } else {
-    NonfungiblePositionManager = new ethers.Contract(
-      NonfungiblePositionManager_address,
-      artifacts.NonfungiblePositionManager.abi,
-      owner
-    )
-  }
 
   // await tryVerify(nonfungiblePositionManager, [
   //   pancakeV3PoolDeployer_address,
@@ -184,49 +153,27 @@ async function main() {
   //   config.WNATIVE,
   //   nonfungibleTokenPositionDescriptor.address,
   // ])
-  console.log('nonfungiblePositionManager', NonfungiblePositionManager_address)
+  console.log('nonfungiblePositionManager', nonfungiblePositionManager.address)
 
-  let PancakeInterfaceMulticall
-  let PancakeInterfaceMulticall_address = ''
-
-  if (!PancakeInterfaceMulticall_address) {
-    PancakeInterfaceMulticall = new ContractFactory(
+  const PancakeInterfaceMulticall = new ContractFactory(
       artifacts.PancakeInterfaceMulticall.abi,
       artifacts.PancakeInterfaceMulticall.bytecode,
       owner
     )
+
     const pancakeInterfaceMulticall = await PancakeInterfaceMulticall.deploy()
-    await pancakeInterfaceMulticall.deployed()
-    PancakeInterfaceMulticall_address = pancakeInterfaceMulticall.address
-  } else {
-    PancakeInterfaceMulticall = new ethers.Contract(
-      PancakeInterfaceMulticall_address,
-      artifacts.PancakeInterfaceMulticall.abi,
-      owner
-    )
-  }
-  console.log('PancakeInterfaceMulticall', PancakeInterfaceMulticall_address)
+  console.log('PancakeInterfaceMulticall', pancakeInterfaceMulticall.address)
 
   // await tryVerify(pancakeInterfaceMulticall)
 
-  let V3Migrator_address = ''
-  let V3Migrator
-
-  if (!V3Migrator_address) {
-    V3Migrator = new ContractFactory(artifacts.V3Migrator.abi, artifacts.V3Migrator.bytecode, owner)
+  const V3Migrator = new ContractFactory(artifacts.V3Migrator.abi, artifacts.V3Migrator.bytecode, owner)
     const v3Migrator = await V3Migrator.deploy(
       pancakeV3PoolDeployer_address,
       pancakeV3Factory_address,
       config.WNATIVE,
-      NonfungiblePositionManager_address
+    nonfungiblePositionManager.address
     )
-    await v3Migrator.deployed()
-    V3Migrator_address = v3Migrator.address
-  } else {
-    V3Migrator = new ethers.Contract(V3Migrator_address, artifacts.V3Migrator.abi, owner)
-  }
-
-  console.log('V3Migrator', V3Migrator_address)
+  console.log('V3Migrator', v3Migrator.address)
 
   // await tryVerify(v3Migrator, [
   //   pancakeV3PoolDeployer_address,
@@ -235,45 +182,28 @@ async function main() {
   //   nonfungiblePositionManager.address,
   // ])
 
-  let TickLens_address = ''
-  let TickLens
-
-  if (!TickLens_address) {
-    TickLens = new ContractFactory(artifacts.TickLens.abi, artifacts.TickLens.bytecode, owner)
+  const TickLens = new ContractFactory(artifacts.TickLens.abi, artifacts.TickLens.bytecode, owner)
     const tickLens = await TickLens.deploy()
-    await tickLens.deployed()
-    TickLens_address = tickLens.address
-  } else {
-    TickLens = new ethers.Contract(TickLens_address, artifacts.TickLens.abi, owner)
-  }
-
-  console.log('TickLens', TickLens_address)
+  console.log('TickLens', tickLens.address)
 
   // await tryVerify(tickLens)
-  let QuoterV2_address = ''
-  let QuoterV2
-  if (!QuoterV2_address) {
-    let QuoterV2 = new ContractFactory(artifacts.QuoterV2.abi, artifacts.QuoterV2.bytecode, owner)
+
+  const QuoterV2 = new ContractFactory(artifacts.QuoterV2.abi, artifacts.QuoterV2.bytecode, owner)
     const quoterV2 = await QuoterV2.deploy(pancakeV3PoolDeployer_address, pancakeV3Factory_address, config.WNATIVE)
-    await quoterV2.deployed()
-    QuoterV2_address = quoterV2.address
-  } else {
-    QuoterV2 = new ethers.Contract(QuoterV2_address, artifacts.QuoterV2.abi, owner)
-  }
-  console.log('QuoterV2', QuoterV2_address)
+  console.log('QuoterV2', quoterV2.address)
 
   // await tryVerify(quoterV2, [pancakeV3PoolDeployer_address, pancakeV3Factory_address, config.WNATIVE])
 
   const contracts = {
-    SwapRouter: SwapRouter_address,
-    V3Migrator: V3Migrator_address,
-    QuoterV2: QuoterV2_address,
-    TickLens: TickLens_address,
+    SwapRouter: swapRouter.address,
+    V3Migrator: v3Migrator.address,
+    QuoterV2: quoterV2.address,
+    TickLens: tickLens.address,
     // NFTDescriptor: nftDescriptor.address,
     // NFTDescriptorEx: nftDescriptorEx.address,
-    NonfungibleTokenPositionDescriptor: NonfungibleTokenPositionDescriptor_address,
-    NonfungiblePositionManager: NonfungiblePositionManager_address,
-    PancakeInterfaceMulticall: PancakeInterfaceMulticall_address,
+    NonfungibleTokenPositionDescriptor: nonfungibleTokenPositionDescriptor.address,
+    NonfungiblePositionManager: nonfungiblePositionManager.address,
+    PancakeInterfaceMulticall: pancakeInterfaceMulticall.address,
   }
 
   fs.writeFileSync(`./deployments/${networkName}.json`, JSON.stringify(contracts, null, 2))

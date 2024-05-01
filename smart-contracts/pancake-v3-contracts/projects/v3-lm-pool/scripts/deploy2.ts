@@ -1,11 +1,10 @@
 import { ethers, network } from 'hardhat'
 import { configs } from '@pancakeswap/common/config'
-import { verifyContract } from '@pancakeswap/common/verify'
+import { tryVerify } from '@pancakeswap/common/verify'
 import fs from 'fs'
 import { abi } from '@pancakeswap/v3-core/artifacts/contracts/PancakeV3Factory.sol/PancakeV3Factory.json'
 
 import { parseEther } from 'ethers/lib/utils'
-import { sleep } from '@pancakeswap/common/sleep'
 const currentNetwork = network.name
 
 async function main() {
@@ -22,23 +21,17 @@ async function main() {
 
   const pancakeV3Factory_address = v3DeployedContracts.PancakeV3Factory
 
-  let pancakeV3LmPoolDeployer_addr = ''
-  if (!pancakeV3LmPoolDeployer_addr) {
     const PancakeV3LmPoolDeployer = await ethers.getContractFactory('PancakeV3LmPoolDeployer')
     const pancakeV3LmPoolDeployer = await PancakeV3LmPoolDeployer.deploy(mcV3DeployedContracts.MasterChefV3)
-    await pancakeV3LmPoolDeployer.deployed()
-    pancakeV3LmPoolDeployer_addr = pancakeV3LmPoolDeployer.address
-  }
 
-  console.log('pancakeV3LmPoolDeployer deployed to:', pancakeV3LmPoolDeployer_addr)
-  await sleep(10000)
-  await verifyContract(pancakeV3LmPoolDeployer_addr, [mcV3DeployedContracts.MasterChefV3])
+  console.log('pancakeV3LmPoolDeployer deployed to:', pancakeV3LmPoolDeployer.address)
+
   const pancakeV3Factory = new ethers.Contract(pancakeV3Factory_address, abi, owner)
 
-  await pancakeV3Factory.setLmPoolDeployer(pancakeV3LmPoolDeployer_addr)
+  await pancakeV3Factory.setLmPoolDeployer(pancakeV3LmPoolDeployer.address)
 
   const contracts = {
-    PancakeV3LmPoolDeployer: pancakeV3LmPoolDeployer_addr,
+    PancakeV3LmPoolDeployer: pancakeV3LmPoolDeployer.address,
   }
   fs.writeFileSync(`./deployments/${networkName}.json`, JSON.stringify(contracts, null, 2))
 }
