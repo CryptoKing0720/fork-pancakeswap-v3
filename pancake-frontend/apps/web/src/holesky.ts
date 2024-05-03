@@ -21,8 +21,8 @@ export const holesky = /*#__PURE__*/ defineChain({
   },
   contracts: {
     multicall3: {
-      address: '0xca11bde05977b3631167028862be2a173976ca11',
-      blockCreated: 77,
+      address: '0x078a7405434b3b658eF4fa954359E57C2e096987',
+      blockCreated: 0,
     },
   },
   testnet: true,

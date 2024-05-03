@@ -56,7 +56,7 @@ export const CHAIN_REFRESH_TIME = {
   [ChainId.BASE_SEPOLIA]: 6_000,
   [ChainId.ARBITRUM_SEPOLIA]: 6_000,
   [ChainId.PULSE_TESTNET]: 6_000,
-  [ChainId.HOLESKY]: 6_000,
+  [ChainId.HOLESKY]: 12_000,
 } as const satisfies Record<ChainId, number>
 
 // used for display in the default list when adding liquidity
@@ -81,7 +81,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
     opBnbTestnetTokens.weth,
   ],
   [ChainId.PULSE_TESTNET]: [pulseTestnetTokens.weth, pulseTestnetTokens.usdt, pulseTestnetTokens.usdc],
-  [ChainId.HOLESKY]: [holeskyTokens.weth, holeskyTokens.usdt, holeskyTokens.usdc],
+  [ChainId.HOLESKY]: [USDC[ChainId.HOLESKY], USDT[ChainId.HOLESKY], WNATIVE[ChainId.HOLESKY]],
   [ChainId.BASE]: [baseTokens.usdc, baseTokens.weth],
   [ChainId.BASE_TESTNET]: [baseTestnetTokens.usdc, baseTestnetTokens.weth],
   [ChainId.SCROLL_SEPOLIA]: [scrollSepoliaTokens.usdc, scrollSepoliaTokens.weth],
@@ -113,7 +113,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   [ChainId.ARBITRUM_SEPOLIA]: [arbSepoliaTokens.usdc, arbSepoliaTokens.weth],
   [ChainId.BASE_SEPOLIA]: [baseSepoliaTokens.usdc, baseSepoliaTokens.weth],
   [ChainId.PULSE_TESTNET]: [pulseTestnetTokens.usdc, pulseTestnetTokens.weth],
-  [ChainId.HOLESKY]: [holeskyTokens.usdc, holeskyTokens.weth],
+  [ChainId.HOLESKY]: [USDC[ChainId.HOLESKY], WNATIVE[ChainId.HOLESKY], USDT[ChainId.HOLESKY]],
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {

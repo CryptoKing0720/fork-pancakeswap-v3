@@ -6,7 +6,7 @@ type SubgraphParams = {
 
 const publicSubgraphParams = {
   // Public key for nodereal subgraph endpoint
-  noderealApiKey: '19bd2b3f75c24e23bb8a0e9d4f55b271',
+  noderealApiKey: '253a34e4fcf64cb18da553295199810d',
 }
 
 export const V3_SUBGRAPHS = getV3Subgraphs(publicSubgraphParams)
@@ -19,7 +19,7 @@ export const STABLESWAP_SUBGRAPHS = {
   [ChainId.BSC]: 'https://api.thegraph.com/subgraphs/name/pancakeswap/exchange-stableswap',
   [ChainId.ARBITRUM_ONE]: 'https://api.thegraph.com/subgraphs/name/pancakeswap/exchange-stableswap-arb',
   [ChainId.PULSE_TESTNET]: 'https://node.9inch.io/subgraphs/name/pancakeswap/exchange-stableswap',
-  [ChainId.HOLESKY]: 'https://node.9inch.io/subgraphs/name/pancakeswap/exchange-stableswap',
+  [ChainId.HOLESKY]: 'https://api.studio.thegraph.com/query/70381/holesky-exchange-stableswap/v1.0.0',
 }
 
 export function getV3Subgraphs({ noderealApiKey }: SubgraphParams) {
@@ -46,7 +46,7 @@ export function getV3Subgraphs({ noderealApiKey }: SubgraphParams) {
     [ChainId.ARBITRUM_SEPOLIA]: null,
     [ChainId.BASE_SEPOLIA]: null,
     [ChainId.PULSE_TESTNET]: 'https://node.9inch.io/subgraphs/name/pancakeswap/exchange-v3',
-    [ChainId.HOLESKY]: 'https://node.9inch.io/subgraphs/name/pancakeswap/exchange-v3',
+    [ChainId.HOLESKY]: 'https://api.studio.thegraph.com/query/70381/holesky-exchange-v3/v1.0.0',
   } satisfies Record<ChainId, string | null>
 }
 
@@ -63,7 +63,7 @@ export function getV2Subgraphs({ noderealApiKey }: SubgraphParams) {
     [ChainId.BASE]: 'https://api.studio.thegraph.com/query/45376/exchange-v2-base/version/latest',
     [ChainId.OPBNB]: `https://open-platform-ap.nodereal.io/${noderealApiKey}/opbnb-mainnet-graph-query/subgraphs/name/pancakeswap/exchange-v2`,
     [ChainId.PULSE_TESTNET]: 'https://node.9inch.io/subgraphs/name/pancakeswap/exchange',
-    [ChainId.HOLESKY]: 'https://node.9inch.io/subgraphs/name/pancakeswap/exchange',
+    [ChainId.HOLESKY]: 'https://api.studio.thegraph.com/query/70381/holesky-exchange-v2/v1.0.0',
   }
 }
 
@@ -78,6 +78,5 @@ export function getBlocksSubgraphs({ noderealApiKey }: SubgraphParams) {
     [ChainId.BASE]: 'https://api.studio.thegraph.com/query/48211/base-blocks/version/latest',
     [ChainId.OPBNB]: `https://open-platform-ap.nodereal.io/${noderealApiKey}/opbnb-mainnet-graph-query/subgraphs/name/pancakeswap/blocks`,
     [ChainId.PULSE_TESTNET]: 'https://node.9inch.io/subgraphs/name/pancakeswap/blocks',
-    [ChainId.HOLESKY]: 'https://node.9inch.io/subgraphs/name/pancakeswap/blocks',
   }
 }
