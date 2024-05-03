@@ -79,7 +79,6 @@
   },
   "pnpm": {
     "patchedDependencies": {
-      "@ledgerhq/connect-kit-loader@1.1.2": "patches/@ledgerhq__connect-kit-loader@1.1.2.patch"
     }
   }
 }
