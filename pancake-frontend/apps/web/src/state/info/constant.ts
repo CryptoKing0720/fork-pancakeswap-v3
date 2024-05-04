@@ -142,7 +142,7 @@ export const multiChainQueryStableClient = {
 }
 
 export const STABLESWAP_SUBGRAPHS_START_BLOCK = {
-  ARB: 169319653,
+  ARB: 1455357,
 }
 
 export const multiChainScan: Record<MultiChainName, string> = {
